@@ -12,7 +12,7 @@ public sealed record DividendAdjustmentTransaction : Transaction
   /// <summary>
   /// The name of the instrument for the dividendAdjustment transaction.
   /// </summary>
-  public string Instrument { get; }
+  public string Instrument { get; init; }
 
   /// <summary>
   /// The total dividend adjustment amount paid or collected in the Account’s
@@ -21,7 +21,7 @@ public sealed record DividendAdjustmentTransaction : Transaction
   /// adjustments paid/collected for each OpenTradeDividendAdjustment found
   /// within the Transaction. Expressed in the account's home currency.
   /// </summary>
-  public decimal DividendAdjustment { get; }
+  public decimal DividendAdjustment { get; init; }
 
   /// <summary>
   /// The total dividend adjustment amount paid or collected in the
@@ -30,24 +30,24 @@ public sealed record DividendAdjustmentTransaction : Transaction
   /// adjustments paid/collected for each OpenTradeDividendAdjustment found
   /// within the Transaction.
   /// </summary>
-  public decimal QuoteDividendAdjustment { get; }
+  public decimal QuoteDividendAdjustment { get; init; }
 
   /// <summary>
   /// The HomeConversionFactors in effect at the time of the
   /// DividendAdjustment.
   /// </summary>
-  public HomeConversionFactors HomeConversionFactors { get; }
+  public HomeConversionFactors HomeConversionFactors { get; init; }
 
   /// <summary>
   /// The Account balance after applying the DividendAdjustment Transaction.
   /// Expressed in the account's home currency.
   /// </summary>
-  public decimal AccountBalance { get; }
+  public decimal AccountBalance { get; init; }
 
   /// <summary>
   /// The dividend adjustment payment/collection details for each open Trade,
   /// within the Account, for which a dividend adjustment is to be paid or
   /// collected.
   /// </summary>
-  public ImmutableList<OpenTradeDividendAdjustment> OpenTradeDividendAdjustments { get; }
+  public ImmutableList<OpenTradeDividendAdjustment> OpenTradeDividendAdjustments { get; init; }
 }
